@@ -4,7 +4,9 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Triathlon Prediction</title>
+    <title>Predict Your Olympic Triathlon Swim Time (1500m)</title>
+
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link href="static/style.css" rel="stylesheet" type="text/css">
@@ -15,22 +17,42 @@
         .form-row {
             margin: 40px 3%;
         }
-
+        body {
+            background-color: #e4ebed;
+        }
+        a {
+          color:inherit;
+        }
     </style>
 </head>
 <body>
-    <div style="text-align:center">
-        <h1>This is a header</h1>
-        <p>Introduction......lots of words.....ok ok</p>
+    <div id="top" style="margin: 15px;">
+        <a href="https://jgoffin.github.io" target="_blank"><h4 style="float:left">Jacob Goffin</h4></a>
+        <span style="float:right">
+            <a href="https://github.com/jgoffin" target="_blank"><i class='fab fa-github' style='font-size:24px'></i></a>
+            <a href="https://www.linkedin.com/in/jacob-goffin" target="_blank"><i class='fab fa-linkedin' style='font-size:24px'></i></a>
+            <a href="https://jgoffin.github.io" target="_blank"><i class='fas fa-home' style='font-size:24px'></i></a>
+        </span>
+    </div>
+    <div class="u-text-align-center" style="clear:both">
+            <h1>Predict Your Triathlon Swim Time (Olympic Distance: 1500m)</h1>
+    </div>
+    <div class="u-text-align-center" style="margin: 10px 20% 10px 20%;">
+        <p>When I was training for my first triathlon, I had no previous experience swimming competitively. But, I wanted to know what kind of time I should be aiming for.
+            So I was curious: could I build a machine learning model to predict a swim time based on my age, gender, and expected bike/run times?
+            The resulting project involved scraping the web for Olympic Triathlon race results, building a model, and deploying it on this website.
+            Enter some values, and see your prediction!
+            If you're curious about the web-scraping code or ML portion, find it all on my repo <a href="https://github.com/jgoffin/triathlon" target="_blank"><b>here</b></a>.
+        </p>
     </div>
     <form id="myForm" action="/predict" method="post">
         <div class="form-row">
             <div class="col">
-                <label for="bike">Bike Time<br>(seconds)</label>
+                <label for="bike">Bike Time (40k/24 Miles)<br>(seconds)</label>
                 <input name="bike" id="bike" type="number" class="form-control" required>
             </div>
             <div class="col">
-                <label for="run">Running Time<br>(seconds)</label>
+                <label for="run">Running Time (10k/6.2 Miles)<br>(seconds)</label>
                 <input name="run" id="run" type="number" class="form-control" required>
             </div>
             <div class="col">
