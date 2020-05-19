@@ -23,10 +23,14 @@ def home_endpoint():
 
 @app.route('/predict', methods=['POST'])
 def get_prediction():
-    # Works only for a single sample
+    """
+    Receives user-inputs from form. Only bike/run time are known to be required, need to handle potential missing values for the rest
+    Returns: string of prediction time (in seconds)
+    """
     if request.method == 'POST':
         data = request.form
         print(data)
+        # Data received from JS timepicker is in HH:mm:ss format
         bike_split = map(int, data['bike'].split(':'))
         # Sum hour, minute, seconds into a single seconds value
         bike_time_secs = sum([a*b for a, b in zip(bike_split, [3600, 60, 1])])
