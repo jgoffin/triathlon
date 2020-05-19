@@ -7,3 +7,5 @@ My motivation for this project was wanting to know, as a first time triathlon co
 3) Designed a flask application that allows for users to input their own variables (age, gender, bike time, run time, etc.), and get back a predicted swim time. (<a href="app.py">app.py</a>)
 
 4) Deployed web-app to AWS ec2 on a Docker container: http://ec2-34-216-76-122.us-west-2.compute.amazonaws.com/
+
+Feel free to reach out with questions or feedback!
